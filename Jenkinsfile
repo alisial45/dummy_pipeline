@@ -4,7 +4,7 @@ Mpipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Main Pipeline'
+                echo 'Branch one'
             }
         }
     }

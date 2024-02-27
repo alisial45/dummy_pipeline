@@ -4,9 +4,14 @@ pipeline {
         stage('Debug 0') {
     steps {
        script {
-                    def payload = change
+                    // Access the GitHub webhook event ID
+                    def eventId = env.CHANGE_ID
+                    
+                    // Retrieve the full webhook payload using the event ID
+                    def payload = httpRequest(url: "https://api.github.com/repos/alisial45/dummy_pipeline.git/hooks/${eventId}", authentication: 'dockerhub')
+                    
+                    // Print the webhook payload to the console
                     echo "Webhook Payload: $payload"
-           
                 }
     }
 }

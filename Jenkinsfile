@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Debug') {
+        stage('Debug 0') {
     steps {
         script {
             def payload = env.BUILD_CAUSE // Assuming BUILD_CAUSE contains the webhook payload

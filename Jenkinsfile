@@ -5,8 +5,6 @@ pipeline {
     parameters {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
     }
-    
-  
   
   stages {
     stage('Example') {

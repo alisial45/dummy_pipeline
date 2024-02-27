@@ -1,10 +1,10 @@
-Mpipeline {
+pipeline {
     agent any
 
     stages {
         stage('Hello') {
             steps {
-                echo 'Main Pipeline'
+                echo 'Branch two'
             }
         }
     }

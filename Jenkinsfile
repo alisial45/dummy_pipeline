@@ -3,7 +3,6 @@ pipeline {
  parameters {
         gitParameter   defaultValue: 'main', name: 'BRANCH', type: 'BRANCH'
     }     
-
     stages {
         stage('Checkout') {
             steps {

@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+         stage('Debug') {
             steps {
-                echo 'Main Pipeline'
+                sh 'echo BRANCH_NAME: $BRANCH_NAME'
             }
         }
     }

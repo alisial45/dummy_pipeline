@@ -3,15 +3,19 @@ pipeline {
     stages {
         stage('Debug 0') {
     steps {
-       script {
-                    // Access the GitHub webhook event ID
-                    def eventId = env.CHANGE_ID
+      script {
+                    // Access the JSON payload of the webhook request
+                    def payloadJson = env.JSON
                     
-                    // Retrieve the full webhook payload using the event ID
-                    def payload = httpRequest(url: "https://api.github.com/repos/alisial45/dummy_pipeline.git/hooks/${eventId}", authentication: 'dockerhub')
+                    // Parse the JSON payload into a Groovy map
+                    def payloadMap = readJSON text: payloadJson
                     
-                    // Print the webhook payload to the console
-                    echo "Webhook Payload: $payload"
+                    // Print specific information from the payload, such as the branch name
+                    def branchName = payloadMap.ref
+                    echo "Branch Name: $branchName"
+                    
+                    // Print the entire payload for debugging
+                    echo "Webhook Payload: $payloadJson"
                 }
     }
 }

@@ -3,9 +3,13 @@ pipeline {
   
   agent any
   
-  parameters {
-    gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-  }
+  
+   parameters {
+        gitParameter branchFilter: 'origin/(.*)', defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
+    }
+    
+  
+  
   stages {
     stage('Example') {
       steps {

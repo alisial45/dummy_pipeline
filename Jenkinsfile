@@ -7,8 +7,9 @@ pipeline {
                     // Access the JSON payload of the webhook request
                     def payloadJson = env.JSON
                     
-                    // Parse the JSON payload into a Groovy map
-                    def payloadMap = readJSON text: payloadJson
+                    // Parse the JSON payload using JsonSlurper
+                    def jsonSlurper = new groovy.json.JsonSlurper()
+                    def payloadMap = jsonSlurper.parseText(payloadJson)
                     
                     // Print specific information from the payload, such as the branch name
                     def branchName = payloadMap.ref

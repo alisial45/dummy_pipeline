@@ -6,6 +6,7 @@ pipeline {
        script {
                     def payload = change
                     echo "Webhook Payload: $payload"
+           
                 }
     }
 }

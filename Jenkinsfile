@@ -3,10 +3,10 @@ pipeline {
     stages {
         stage('Debug 0') {
     steps {
-        script {
-            def payload = env.BUILD_CAUSE // Assuming BUILD_CAUSE contains the webhook payload
-            echo "Webhook Payload: $payload"
-        }
+       script {
+                    def payload = change
+                    echo "Webhook Payload: $payload"
+                }
     }
 }
         

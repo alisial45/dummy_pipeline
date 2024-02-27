@@ -4,6 +4,8 @@ pipeline {
     triggers{
         githubPush()
             }
+
+    
     stages {
         stage('Hello') {
             steps {

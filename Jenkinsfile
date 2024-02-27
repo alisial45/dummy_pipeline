@@ -3,7 +3,8 @@ pipeline {
   agent any
   
     parameters {
-        gitParameter branchFilter: 'origin/(.*)', defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
+  
+      gitParameter branchFilter: 'origin/(.*)', defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
     }
   stages {
      stage('Debug') {

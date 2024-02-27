@@ -1,16 +1,18 @@
 pipeline {
     agent any
-    triggers{
-        
-        githubPush()
-            }
-
+ parameters {
+        gitParameter   defaultValue: 'main', name: 'BRANCH', type: 'BRANCH'
+    }
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-            
-                echo 'Branch one'
+                script {
+                         git url: 'https://github.com/alisial45/dummy_pipeline.git', 
+                         credentialsId: 'dockerhub', 
+                         branch: "${params.BRANCH}"
+                }
             }
         }
+        // Other stages of your pipeline
     }
 }

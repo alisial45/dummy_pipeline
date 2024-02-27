@@ -3,12 +3,11 @@ pipeline {
   agent any
   
    environment {
-        BRANCH_NAME = "${env.BRANCH_NAME}"
+        BRANCH_NAME = "${BRANCH_NAME}"
     }
   
     parameters {
-
-      gitParameter branchFilter: 'origin/(.*)', defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
+      gitParameter branchFilter: 'origin/(.*)', defaultValue: "${BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
     
     }
   
@@ -16,7 +15,7 @@ pipeline {
    stages {
      stage('Debug') {
             steps {
-                echo "BRANCH_NAME: ${env.BRANCH_NAME}"
+                echo "BRANCH_NAME: ${BRANCH_NAME}"
             }
         }
     stage('Example') {

@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        git branch: "${params.BRANCH}",credentialsId: 'dockerhub', url: 'https://github.com/alisial45/dummy_pipeline.git', tool: 'Default'
+        git branch: "${params.BRANCH}",credentialsId: 'dockerhub', url: 'https://github.com/alisial45/dummy_pipeline.git', tool: 'AWS git'
       }
     }
   }

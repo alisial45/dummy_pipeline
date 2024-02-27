@@ -19,7 +19,7 @@ pipeline {
         }
     stage('Example') {
       steps {
-        git branch: "${params.BRANCH}", credentialsId: 'dockerhub', url: 'https://github.com/alisial45/dummy_pipeline.git' 
+        git branch: "${params.BRANCH}", credentialsId: 'dockerhub', url: 'https://github.com/alisial45/dummy_pipeline.git', tool: 'Default'
       }
     }
   }

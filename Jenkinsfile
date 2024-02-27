@@ -6,6 +6,7 @@ triggers {
     stages {
         stage('Hello') {
             steps {
+            
                 echo 'Branch one'
             }
         }

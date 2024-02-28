@@ -1,7 +1,7 @@
 pipeline {
     agent any
  parameters {
-        gitParameter   defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
+        gitParameter   defaultValue: 'Branch-one', name: 'BRANCH', type: 'PT_BRANCH'
     }
 
     

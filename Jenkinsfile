@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     parameters {
         gitParameter(
             branchFilter: 'origin/(.*)',

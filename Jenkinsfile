@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     
-                    echo "Building branch: ${env.BRANCH_NAME}"
+                    echo "Building branch: ${env.GIT_BRANCH}"
                     // Add steps to build the specified branch
                 }
             }

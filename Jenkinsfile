@@ -2,7 +2,7 @@
 pipeline {
   agent any
       parameters {
-      gitParameter branchFilter: 'origin/(.*)', defaultValue: "${BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
+      gitParameter branchFilter: 'origin/(.*)', defaultValue: 'Branch-one', name: 'BRANCH', type: 'PT_BRANCH'
     
     }
  

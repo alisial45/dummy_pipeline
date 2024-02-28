@@ -7,12 +7,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                script {
-                    def branchName = params.GIT_BRANCH
-                  
-                    echo "Building branch: ${branchName}"
-                    // Add steps to build the specified branch
-                }
+                echo 'hello'
             }
         }
     }

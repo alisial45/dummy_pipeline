@@ -2,10 +2,10 @@ pipeline {
     agent any
     stages {
         
-         stage('Debug') {
+         stage('Name of Branch') {
             steps {
                 
-                sh "echo 'Branch Name: ${env.BRANCH_NAME}'"
+                echo "${env.BRANCH_NAME}"
             }
         }
     }

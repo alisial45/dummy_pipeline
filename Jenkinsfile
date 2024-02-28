@@ -9,7 +9,7 @@ pipeline {
         stage('Hello') {
             steps {
                 script {
-                    //def branchName = params.GIT_BRANCH
+                    //def branchName = params.BRANCH_NAME
                     echo "Building branch: ${BRANCH_NAME}"
                     // Add steps to build the specified branch
                 }

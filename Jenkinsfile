@@ -1,12 +1,27 @@
 pipeline {
     agent any
+
+    parameters {
+        string(name: 'GIT_BRANCH', defaultValue: 'master', description: 'Name of the branch to build')
+    }
     
     stages {
-        stage('Checkout') {
+        stage('Hello') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: "${env.GIT_BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline.git']]])
+                script {
+                    def branchName = params.GIT_BRANCH
+                    echo "Building branch: ${branchName}"
+                    // Add steps to build the specified branch
+                    checkout([$class: 'GitSCM', 
+                              branches: [[name: "${branchName}"]], 
+                              userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline.git']], 
+                              extensions: [[$class: 'CloneOption', depth: 1]], 
+                              doGenerateSubmoduleConfigurations: false, 
+                              submoduleCfg: [], 
+                              browser: [$class: 'GitHubWeb', repoUrl: 'https://github.com/alisial45/dummy_pipeline.git', version: ''],
+                              extensions: [[$class: 'RefSpecs', values: [[value: "refs/heads/${branchName}"]]]]])
+                }
             }
         }
     }
 }
-

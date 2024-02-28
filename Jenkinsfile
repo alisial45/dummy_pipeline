@@ -4,11 +4,12 @@ pipeline {
     parameters {
         gitParameter(
             branchFilter: 'origin/(.*)',
-            defaultValue: env.BRANCH_NAME, // Use BRANCH_NAME environment variable as default value
+            defaultValue: 'main', // Use BRANCH_NAME environment variable as default value
             name: 'BRANCH',
             type: 'PT_BRANCH'
         )
     }
+    
     
     stages {
         stage('Example') {

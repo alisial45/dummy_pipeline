@@ -1,14 +1,19 @@
-// Using git without checkout
 pipeline {
-  agent any
-      parameters {
-      gitParameter branchFilter: 'origin/(.*)', defaultValue: 'Branch-one', name: 'BRANCH', type: 'PT_BRANCH'
-    
+    agent any
+ parameters {
+        gitParameter   defaultValue: "${env.BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
     }
-  
-    stage('Example') {
-     sh 'echo "hello"'
-    }
-  }
-}
 
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                         git url: 'git@github.com:Productionmanager/productionmanager.git', 
+                         credentialsId: 'produtionmanager', 
+                         branch: "${params.BRANCH}"
+                }
+            }
+        }
+        // Other stages of your pipeline
+    }
+}

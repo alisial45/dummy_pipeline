@@ -1,14 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Debug 0') {
-    steps {
-     script {
-                    echo "Webhook Payload: ${env.JSON}"
-                }
-    }
-}
-        
         
          stage('Debug') {
             steps {

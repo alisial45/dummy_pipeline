@@ -1,25 +1,26 @@
 pipeline {
     agent any
-    stages {
-        stage('Debug 0') {
-    steps {
-     script {
-                    echo "Webhook Payload: ${env.JSON}"
-                }
+
+    parameters {
+        gitParameter(
+            branchFilter: 'origin/(.*)',
+            defaultValue: env.BRANCH_NAME, // Use BRANCH_NAME environment variable as default value
+            name: 'BRANCH',
+            type: 'PT_BRANCH'
+        )
     }
-}
-        
-        
-         stage('Debug') {
+
+    stages {
+        stage('Example') {
             steps {
-                
-                sh "echo 'Branch Name: ${env.BRANCH_NAME}'"
+                script {
+                    echo "Selected branch: ${params.BRANCH}"
+                    // Use the branch name for further operations in the pipeline
+                }
             }
         }
     }
 }
-
-
 
 
 

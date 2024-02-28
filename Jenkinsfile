@@ -2,9 +2,7 @@ pipeline {
     agent any
  parameters {
         gitParameter   defaultValue: 'Branch-one', name: 'BRANCH', type: 'PT_BRANCH'
-    }
-
-    
+    } 
     stages {
         stage('Checkout') {
             steps {

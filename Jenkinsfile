@@ -6,6 +6,7 @@ pipeline {
         BRANCH_NAME = "${BRANCH_NAME}"
     }
   
+  
     parameters {
       gitParameter branchFilter: 'origin/(.*)', defaultValue: "${BRANCH_NAME}", name: 'BRANCH', type: 'PT_BRANCH'
     

@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Payload') {
+        stage('Hello') {
             steps {
                 script {
-                    def payload = env.CHANGE_PAYLOAD ?: 'No payload available'
-                    echo "Webhook Payload: ${payload}"
+                    def branchName = sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
+                    echo "Branch Name: ${branchName}"
                 }
             }
         }

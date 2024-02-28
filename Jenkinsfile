@@ -8,7 +8,7 @@ pipeline {
  
     stage('Example') {
       steps {
-        git branch: "${params.BRANCH}", credentialsId: 'forwebhook', url: 'https://github.com/alisial45/dummy_pipeline.git', tool: 'Default'
+        git branch: 'Branch-one', credentialsId: 'forwebhook', url: 'https://github.com/alisial45/dummy_pipeline.git', tool: 'Default'
       }
     }
   }

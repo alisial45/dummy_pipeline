@@ -12,6 +12,7 @@ pipeline {
                 sh 'echo BRANCH_NAME: $BRANCH_NAME'
             }
         }
+
         
         stage('Example') {
             steps {

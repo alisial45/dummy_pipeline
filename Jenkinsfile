@@ -9,7 +9,7 @@ pipeline {
                 script {
                          git url: 'git@github.com:Productionmanager/productionmanager.git', 
                          credentialsId: 'produtionmanager', 
-                         branch: "${params.BRANCH}"
+                         branch: 'Branch-one'
                 }
             }
         }

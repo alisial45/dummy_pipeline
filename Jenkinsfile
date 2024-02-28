@@ -2,22 +2,10 @@ pipeline {
     agent any
     
     stages {
-        stage('Fetch Branch') {
+        stage('Checkout') {
             steps {
-                echo "Fetching branch: ${env.GIT_BRANCH}"
-                // Add steps to fetch and checkout the specified branch
-                git branch: "${env.GIT_BRANCH}", url: 'https://github.com/alisial45/dummy_pipeline.git'
+                checkout([$class: 'GitSCM', branches: [[name: "${env.GIT_BRANCH}"]], userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline.git']]])
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

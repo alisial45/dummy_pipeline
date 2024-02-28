@@ -9,7 +9,6 @@ pipeline {
             type: 'PT_BRANCH'
         )
     }
-
     stages {
         stage('Example') {
             steps {

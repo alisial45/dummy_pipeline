@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(defaultValue: '', description: 'This is my dynamic branch', name: 'MY_BRANCH')
+        string(defaultValue: 'one-parameterized', description: 'This is my dynamic branch', name: 'MY_BRANCH')
     }
 
     stages {

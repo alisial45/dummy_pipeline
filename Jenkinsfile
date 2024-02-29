@@ -8,10 +8,12 @@ pipeline{
 			
 echo env.GIT_BRANCH
 
-	    checkout scmGit(
-    branches: [[name: 'v4.11.x']],
-    userRemoteConfigs: [[credentialsId:  'forwebhook',
-        url: 'ssh://github.com:alisial45/dummy_pipeline.git']])
+
+
+	    deleteDir()
+    checkout scmGit(
+    branches: [[name: '*/master']],
+    userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline.git']])
   }
 		
   }

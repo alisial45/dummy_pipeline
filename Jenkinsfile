@@ -2,6 +2,12 @@ pipeline{
   agent any
 
   stages{
+
+	  stage('Clean workspace') {
+    deleteDir()
+    sh 'ls -lah'
+}
+	  
     stage('checkout'){
 			
 echo env.GIT_BRANCH

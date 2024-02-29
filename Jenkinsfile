@@ -10,7 +10,7 @@ pipeline{
                   
                 
 
-            checkout scmGit(branches: [[name: 'one-parameterized']],
+            checkout scmGit(branches: [[name: 'origin/one-parameterized']],
                 userRemoteConfigs: [
                     [ url: 'https://github.com/alisial45/dummy_pipeline.git' ]
                 ])

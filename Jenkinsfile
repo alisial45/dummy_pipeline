@@ -10,9 +10,11 @@ pipeline {
     
         stage('Checkout') {
             steps {
-                echo "Selected branch: ${params.MY_BRANCH}"
-                // Use MY_BRANCH parameter value for dynamic branch checkout
-                checkout([$class: 'GitSCM', branches: [[name: "$MY_BRANCH"]], userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline']]])
+                checkout scmGit(branches: [[name: 'origin/one-parameterized']],
+                userRemoteConfigs: [
+                    [ url: 'https://github.com/alisial45/dummy_pipeline.git' ]
+                ])
+                
             }
         }
     }

@@ -6,9 +6,10 @@ pipeline{
 			
 	checkout([
     $class: 'GitSCM',
-    branches: [[name: 'origin/one-parameterized']],
+    branches: [[name: env.GIT_BRANCH]],
     userRemoteConfigs: [[url: 'git@github.com:alisial45/dummy_pipeline.git']]
 ])
+	    
 
   }
 		

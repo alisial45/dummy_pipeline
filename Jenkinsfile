@@ -8,8 +8,6 @@ pipeline{
 			
 echo env.GIT_BRANCH
 
-
-
 	    deleteDir()
     checkout scmGit(
     branches: [[name: '*/master']],

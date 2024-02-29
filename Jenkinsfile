@@ -6,12 +6,8 @@ pipeline{
 	  
     stage('checkout'){
 			
-echo env.GIT_BRANCH
+         echo 'hello'
 
-	    deleteDir()
-    checkout scmGit(
-    branches: [[name: '*/master']],
-    userRemoteConfigs: [[url: 'https://github.com/alisial45/dummy_pipeline.git']])
   }
 		
   }

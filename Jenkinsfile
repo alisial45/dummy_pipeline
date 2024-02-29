@@ -4,7 +4,6 @@ pipeline {
     parameters {
         string(defaultValue: '', description: 'This is my dynamic branch', name: 'MY_BRANCH')
     }
-
     stages {
 
         stage('Set Default Branch') {

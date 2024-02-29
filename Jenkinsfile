@@ -4,10 +4,12 @@ pipeline{
   stages{
     stage('checkout'){
 			
-	checkout scmGit(branches: [[name: 'origin/one-parameterized']],
-                userRemoteConfigs: [
-                    [ url: 'git@github.com:alisial45/dummy_pipeline.git' ]
-                ])
+	checkout([
+    $class: 'GitSCM',
+    branches: [[name: 'origin/one-parameterized']],
+    userRemoteConfigs: [[url: 'git@github.com:alisial45/dummy_pipeline.git']]
+])
+
   }
 		
   }

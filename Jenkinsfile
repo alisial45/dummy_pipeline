@@ -1,5 +1,5 @@
 pipeline{
-  
+  agent any
 parameters {
         string(name: 'BRANCH_NAME', defaultValue: "${env.GIT_BRANCH}", description: 'Name of the branch to build')
     }

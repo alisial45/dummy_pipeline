@@ -4,6 +4,7 @@ pipeline {
     parameters {
         string(name: 'BRANCH_TO_BUILD', defaultValue: 'one-parameterized', description: 'Enter the branch to build')
     }
+    
     stages {        
         stage('Checkout') {
             steps {

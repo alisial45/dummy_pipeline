@@ -1,13 +1,12 @@
 pipeline {
     agent any
     stages {      
-        stage('Checkout') {
+         stage('Clone Repo') {
             steps {
-                checkout scmGit(branches: [[name: 'origin/one-parameterized']],
-                userRemoteConfigs: [
-                    [ url: 'https://github.com/alisial45/dummy_pipeline.git' ]
-                ])       
+                /* groovylint-disable-next-line LineLength */
+                git([url: 'https://github.com/alisial45/dummy_pipeline.git', branch: "one-parameterized", credentialsId: 'forwebhook'])
             }
+        }
         }
     }
 

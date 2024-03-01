@@ -11,6 +11,7 @@ pipeline {
                 git branch: "${env.GIT_BRANCH}", credentialsId: 'forwebhook', url: 'https://github.com/alisial45/dummy_pipeline.git'
             }
         }
+        
     }
     
 }

@@ -14,6 +14,7 @@ pipeline {
                     git branch: branchName, credentialsId: 'your-git-credentials-id', url: 'https://github.com/alisial45/dummy_pipeline.git'
                 }
             }
+            
         }
         
         // Other stages

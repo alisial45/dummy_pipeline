@@ -9,6 +9,7 @@ pipeline {
     }
 
     st+ages {
+        
         stage('Checkout') {
             steps {
                 // Checkout the selected branch

@@ -5,8 +5,7 @@ pipeline {
         string(name: 'BRANCH_TO_BUILD', defaultValue: '', description: 'Enter the branch to build')
     }
 
-    stages {
-        
+    stages {        
         stage('Checkout') {
             steps {
                 script {

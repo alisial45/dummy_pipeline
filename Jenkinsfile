@@ -7,6 +7,7 @@ pipeline {
                      defaultValue: env.GIT_BRANCH, 
                      description: 'Select the branch to build')
     }
+
     
     stages {
         stage('Checkout') {

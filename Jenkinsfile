@@ -7,7 +7,6 @@ pipeline {
                      defaultValue: env.GIT_BRANCH, 
                      description: 'Select the branch to build')
     }
-
     st+ages {
         
         stage('Checkout') {

@@ -4,7 +4,6 @@ pipeline {
     parameters {
         string(name: 'BRANCH_TO_BUILD', defaultValue: env.GIT_BRANCH, description: 'Enter the branch to build')
     }
-
     stages {        
         stage('Checkout') {
             steps {

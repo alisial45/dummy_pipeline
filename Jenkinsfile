@@ -5,6 +5,7 @@ pipeline {
         // Define Git parameter to select branch dynamically
         gitParameter(branch: '', 
                      defaultValue: env.GIT_BRANCH, 
+                     
                      description: 'Select the branch to build')
     }
     st+ages {

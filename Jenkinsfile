@@ -1,16 +1,17 @@
 pipeline {
     agent any
     
-    stages {
+    parameters {
+        string(name: 'BRANCH_TO_BUILD', defaultValue: '', description: 'Enter the branch to build')
+    }
     
+    stages {
         stage('Checkout') {
             steps {
-                // Checkout the selected branch
-                
                 script {
-                    git branch: env.GIT_BRANCH, 
-                        credentialsId: 'forwebhook', 
-                        url: 'https://github.com/alisial45/dummy_pipeline.git'
+                    // Use the specified branch or fallback to GIT_BRANCH if not provided
+                    def branchName = params.BRANCH_TO_BUILD ?: env.GIT_BRANCH
+                    git branch: branchName, credentialsId: 'your-git-credentials-id', url: 'https://github.com/alisial45/dummy_pipeline.git'
                 }
             }
         }
@@ -18,5 +19,3 @@ pipeline {
         // Other stages
     }
 }
-
-

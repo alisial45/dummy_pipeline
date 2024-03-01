@@ -8,8 +8,7 @@ pipeline {
                 userRemoteConfigs: [
                     [ url: 'https://github.com/alisial45/dummy_pipeline' ]
                 ])
-                
-                
+                     
             }
         }
     }

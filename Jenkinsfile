@@ -8,13 +8,14 @@ pipeline {
     }
     stages {      
          stage('Clone Repo') {
+             
              steps{
+                 
            echo env.GIT_BRANCH
+             
              }
     
-        }
-
-      
+        }  
     }
 }
 

@@ -1,21 +1,12 @@
 pipeline {
-    agent any
-     environment {
-        DEFAULT_BRANCH = 'one-parameterized'
-    }
-      parameters {
-        gitParameter branchFilter: 'origin/(.*)',  defaultValue: DEFAULT_BRANCH, name: 'BRANCH', type: 'PT_BRANCH'
-    }
+    agent any   
     stages {      
-         stage('Clone Repo') {
-             
-             steps{
-                 
-           echo env.GIT_BRANCH
-             
-             }
-    
-        }  
+        stage('Checkout') {
+            steps {
+                // Checkout the branch specified in the webhook payload
+                git branch: "${env.GIT_BRANCH}", credentialsId: 'forwebhook', url: 'https://github.com/alisial45/dummy_pipeline.git'
+            }
+        }
     }
 }
 

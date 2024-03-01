@@ -2,10 +2,11 @@ pipeline {
     agent any
     stages {      
          stage('Clone Repo') {
-           echo 'hello'
-        }
+           echo env.GIT_BRANCH
+        
         }
     }
+}
 
 
 

@@ -1,5 +1,9 @@
 pipeline {
-    agent any   
+    agent any  
+    environment{
+        DEFAULT_BRANCH = env.GIT_BRANCH
+        
+    }
     stages {      
         stage('Checkout') {
             steps {

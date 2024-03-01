@@ -8,7 +8,7 @@ pipeline {
                      description: 'Select the branch to build')
     }
 
-    
+
     stages {
         stage('Checkout') {
             steps {

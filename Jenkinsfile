@@ -1,7 +1,7 @@
 pipeline {
     agent any
      environment {
-        DEFAULT_BRANCH = env.GIT_BRANCH
+        DEFAULT_BRANCH = 'one-parameterized'
     }
     stages {      
          stage('Clone Repo') {
